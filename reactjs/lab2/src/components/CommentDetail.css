@@ -1,0 +1,16 @@
+.comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment .image {
+    width: 100px;
+    height: 100px;
+}
+
+.comment .name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

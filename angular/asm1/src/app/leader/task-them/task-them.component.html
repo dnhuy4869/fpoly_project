@@ -1,0 +1,61 @@
+<form class="mt-3 px-2" (submit)="addTask($event)" #frm1="ngForm">
+    <h5 class="bg-success text-white p-2">THÊM TASK</h5>
+    <div class="mb-3">
+        Tên task
+        <input class="form-control" name="tenTask" [(ngModel)]="tenTask" required #errten="ngModel">
+        <p *ngIf="errten.invalid && (errten.dirty || errten.touched)" class="text-danger">
+            <span *ngIf="errten.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Mô tả
+        <textarea class="form-control" name="moTa" [(ngModel)]="moTa" required #errmt="ngModel"></textarea>
+        <p *ngIf="errmt.invalid && (errmt.dirty || errmt.touched)" class="text-danger">
+            <span *ngIf="errmt.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Dự án
+        <select class="form-control" name="duAnID" [(ngModel)]="duAnID" required #errdaid="ngModel">
+            <option *ngFor="let da of projectData.listDuAn" value={{da.id}}>
+                {{da.tenDuAn}}
+            </option>
+        </select>
+        <p *ngIf="errdaid.invalid && (errdaid.dirty || errdaid.touched)" class="text-danger">
+            <span *ngIf="errdaid.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Người thực hiện
+        <select class="form-control" name="nhanvienID" [(ngModel)]="nhanvienID" required #errnvid="ngModel">
+            <option *ngFor="let nv of projectData.listNhanVien" value={{nv.id}}>
+                {{nv.ho}} {{nv.ten}}
+            </option>
+        </select>
+        <p *ngIf="errnvid.invalid && (errnvid.dirty || errnvid.touched)" class="text-danger">
+            <span *ngIf="errnvid.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Độ ưu tiên
+        <select class="form-control" name="priority" [(ngModel)]="priority" required #errut="ngModel">
+            <option value="0">Bình thường</option>
+            <option value="1">Quan trọng</option>
+        </select>
+        <p *ngIf="errut.invalid && (errut.dirty || errut.touched)" class="text-danger">
+            <span *ngIf="errut.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Trạng thái
+        <select class="form-control" name="status" [(ngModel)]="status" required #errst="ngModel">
+            <option value="0">Chưa hoàn thành</option>
+            <option value="1">Đã hoàn thành</option>
+        </select>
+        <p *ngIf="errst.invalid && (errst.dirty || errst.touched)" class="text-danger">
+            <span *ngIf="errst.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <p><button type="submit" class="btn btn-primary p-2">Thêm Task</button></p>
+</form>
+

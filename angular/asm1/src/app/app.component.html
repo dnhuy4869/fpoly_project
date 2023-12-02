@@ -1,0 +1,84 @@
+<div class="container">
+    <nav class="bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Quản lý dự án FPoly</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#"
+                                routerLink="">Bảng điều khiển</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Nhân viên
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#" routerLink="leader/themnv">Thêm nhân viên</a></li>
+                                <li><a class="dropdown-item" href="#" routerLink="leader/dsnv">Danh sách nhân viên</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Dự án
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#" routerLink="leader/themduan">Thêm dự án</a></li>
+                                <li><a class="dropdown-item" href="#" routerLink="leader/dsduan">Danh sách dự án</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Task
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#" routerLink="leader/themtask">Thêm task</a></li>
+                                <li><a class="dropdown-item" href="#" routerLink="leader/dstask">Danh sách task</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Người dùng
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div *ngIf="isLoggedIn()">
+                                    <li class="dropdown-item">Đã đăng nhập</li>
+                                    <li class="dropdown-item" (click)="logout()" >Đăng xuất</li>
+                                  </div>
+
+                                <div *ngIf="!isLoggedIn()">
+                                    <li><a class="dropdown-item" href="#" routerLink="employee/login">Đăng nhập</a></li>
+                                    <li><a class="dropdown-item" href="#" routerLink="employee/register">Đăng ký</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </nav>
+    <nav class="bg-danger p-2 text-white">
+        <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item active" aria-current="page">Home</li>
+            <li class="breadcrumb-item" aria-current="page">{{getCurrBreadcumb()}}</li>
+        </ol>
+    </nav>
+    <main class="d-flex" style="min-height: 450px;">
+        <aside class="col-md-1 bg-secondary" id="cottrai">
+        </aside>
+        <article class="col-md-10 bg-body" id="cotgiua">
+            <router-outlet></router-outlet>
+        </article>
+        <aside class="col-md-1 bg-secondary" id="cotphai"> </aside>
+    </main>
+    <footer class="bg-dark text0-white " style="height: 45px;"> </footer>
+</div>

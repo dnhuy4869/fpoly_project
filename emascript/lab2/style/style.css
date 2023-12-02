@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 70%;
+    margin: 0 auto
+}
+
+section {
+    float: left;
+    width: 100%;
+    margin: 50px
+}
+.album{
+    float: left;
+    width: 23%;
+    margin: 1%;
+    border: 1px solid #ccc;
+    text-align: center;
+    min-height: 50px;
+}
+.loadhinhanh { 
+    display: flex;
+    flex-direction: row;
+    margin: 1%;
+    align-items: center;
+}
+
+.boxhinhanh {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.boxhinhanh img {
+    width: 300px;
+    height: 200px;
+}

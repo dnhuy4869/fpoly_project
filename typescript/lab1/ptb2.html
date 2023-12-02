@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <form name="frm" class="col-5 m-auto mt-5 border border-primary p-2">
+        <div class="mb-3">
+            Số A
+            <input class="form-control" name="a" type="number" placeholder="Nhập hệ số a">
+        </div>
+        <div class="mb-3">
+            Số B
+            <input class="form-control" name="b" type="number" placeholder="Nhập hệ số b">
+        </div>
+        <div class="mb-3">
+            Số C
+            <input class="form-control" name="c" type="number" placeholder="Nhập hệ số c">
+        </div>
+        <div class="mb-3">
+            <button name="btn" class="btn btn-primary p-2" type="button">Tính nghiệm</button>
+        </div>
+    </form>
+    <script src="ptb2.js"></script>
+    <script>
+        //const frm = document.getElementsByName("frm")[0];
+        frm.btn.onclick = () => {
+            var arr = ptb2(frm.a.value, frm.b.value, frm.c.value);
+            alert(arr);
+        }
+    </script>
+</body>
+
+</html>

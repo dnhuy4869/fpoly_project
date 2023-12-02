@@ -1,0 +1,51 @@
+<!-- Bai 2 -->
+<!-- <div class="container">
+    <div class="card text-center text-black">
+        <div class="card-header bg-info">
+            THÔNG TIN SINH VIÊN
+        </div>
+        <div class="card-body">
+            <img src="assets/{{student.hinh}}" style="width: 400px;" />
+            <ul class="list-group">
+                <li class="list-group-item">Họ tên: {{student.hoten}}</li>
+                <li class="list-group-item">Ngày sinh: {{student.ngaysinh}}</li>
+                <li class="list-group-item">Phái: {{student.phai === 0 ? "Nam" : "Nữ"}}</li>
+                <li class="list-group-item">Điểm: {{student.diem}}</li>
+            </ul>
+        </div>
+        <div class="card-footer text-muted">
+            Lab 1 môn Angular
+        </div>
+    </div>
+</div> -->
+
+<!-- Bai 3 -->
+<!-- <div class="container">
+    <div class="card text-black">
+        <div class="card-header bg-info">
+            DANH SÁCH NHÀ KHOA HỌC
+        </div>
+        <div class="card-body p-0">
+            <div id="ds" class="ms-3 py-2">
+                {{render()}}
+            </div>
+        </div>
+        <div class="card-footer">
+            Có <b>{{listNhaKH.length}}</b> nhà khoa học trong danh sách
+        </div>
+    </div>
+</div> -->
+
+<!-- Bai 4 -->
+<div class="card text-black">
+    <div class="card-header text-center bg-info">
+        DANH SÁCH SẢN PHẨM
+    </div>
+    <div class="card-body p-0">
+        <div id="listSP" class="row row-cols-3">
+            {{renderSP()}}
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

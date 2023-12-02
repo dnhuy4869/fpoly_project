@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="username">Username: </h3>
+    <h3 id="password">Password: </h3>
+    <h3 id="email">Email: </h3>
+    <h3 id="phone">Phone: </h3>
+
+    <script>
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var email = document.getElementById("email");
+        var phone = document.getElementById("phone");
+
+        var user = JSON.parse(localStorage.getItem("currUser"));
+
+        username.innerText = `Username: ${user.username}`;
+        password.innerText = `Password: ${user.password}`;
+        phone.innerText = `Email: ${user.phone}`;
+        email.innerText = `Phone: ${user.email}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 50px auto;
+            padding: 20px;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .container form {
+            padding: 16px;
+        }
+
+        .container p {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login" class="container">
+        <h2>Login Form</h2>
+        <form id="login-form">
+
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="password" required>
+
+            <button type="submit">Login</button>
+            <button id="register-button">Register</button>
+            <div class="error" id="error"></div>
+        </form>
+    </div>
+
+    <div id="register" class="container" style="display:none;">
+        <h2>Register Form</h2>
+        <form id="register-form">
+
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter username" id="re-username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter password" id="re-password" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter email" id="email" required>
+
+            <label for="phone"><b>Phone number</b></label>
+            <input type="text" placeholder="Enter phone number" id="phone" required>
+
+            <button type="submit">Register</button>
+            <div class="error" id="error"></div>
+        </form>
+    </div>
+
+    <script>
+        class User {
+            constructor(username, password, email, phone) {
+                this.username = username;
+                this.password = password;
+                this.email = email;
+                this.phone = phone;
+            }
+        }
+
+        const login = document.getElementById("login");
+        const register = document.getElementById("register");
+        const registerButton = document.getElementById("register-button");
+
+        registerButton.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            login.style.display = "none";
+            register.style.display = "block";
+        });
+
+        var form = document.getElementById("login-form");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var error = document.getElementById("error");
+
+            if (!localStorage.getItem("users")) {
+                error.innerHTML = "Invalid username or password.";
+                return;
+            }
+
+            var users = JSON.parse(localStorage.getItem("users"));
+            var index = users.findIndex(i => i.username === username && i.password === password);
+
+            if (index == -1) {
+                error.innerHTML = "Invalid username or password.";
+                return;
+            } else {
+                
+                localStorage.setItem("currUser", JSON.stringify(users[index]));
+                window.location.href = "home.html";
+            }
+        });
+
+        var registerForm = document.getElementById("register-form");
+
+        registerForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var username = document.getElementById("re-username").value;
+            var password = document.getElementById("re-password").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+
+            var user = new User(username, password, email, phone);
+
+            if (!localStorage.getItem("users")) {
+                localStorage.setItem("users", JSON.stringify([]));
+            }
+
+            var users = JSON.parse(localStorage.getItem("users"));
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
+
+            console.log(users);
+        });
+
+    </script>
+</body>
+
+</html>

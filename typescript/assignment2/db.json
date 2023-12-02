@@ -1,0 +1,90 @@
+{
+  "hinh": [
+    {
+      "id": 1,
+      "ten": "Hoa lan",
+      "url": "lan.jpg",
+      "mota": "Lan có mùi thơm dễ chịu, sang trọng, tao nhã"
+    },
+    {
+      "id": 2,
+      "ten": "Anh đào",
+      "url": "anhdao.jpg",
+      "mota": "Hoa mỏng manh, tượng trưng cho sắc đẹp và tinh khiết"
+    },
+    {
+      "id": 3,
+      "ten": "Thiên điểu",
+      "url": "thiendieu.jpg",
+      "mota": "Hoa có dạng chú chim đầy màu sắc"
+    },
+    {
+      "id": 4,
+      "ten": "Hoa tigon",
+      "url": "tigon.jpg",
+      "mota": "Hoa màu hồng, cánh mỏng manh.Mọc thành từng chùm."
+    },
+    {
+      "id": 5,
+      "ten": "Thược dược",
+      "url": "thuocduoc.jpg",
+      "mota": "Hoa có nhiều màu, đẹp ngất ngây lòng người,"
+    },
+    {
+      "id": 6,
+      "ten": "Cẩm tú cầu",
+      "url": "camtucau.jpg",
+      "mota": "Đẹp trang nhã, nhẹ nhàng. Sống lâu năm"
+    },
+    {
+      "id": 7,
+      "ten": "Hoa lan",
+      "url": "lan.jpg",
+      "mota": "Lan có mùi thơm dễ chịu, sang trọng, tao nhã"
+    },
+    {
+      "id": 8,
+      "ten": "Anh đào",
+      "url": "anhdao.jpg",
+      "mota": "Hoa mỏng manh, tượng trưng cho sắc đẹp và tinh khiết"
+    },
+    {
+      "id": 9,
+      "ten": "Thiên điểu",
+      "url": "thiendieu.jpg",
+      "mota": "Hoa có dạng chú chim đầy màu sắc"
+    },
+    {
+      "id": 10,
+      "ten": "Hoa tigon",
+      "url": "tigon.jpg",
+      "mota": "Hoa màu hồng, cánh mỏng manh.Mọc thành từng chùm."
+    },
+    {
+      "id": 11,
+      "ten": "Thược dược",
+      "url": "thuocduoc.jpg",
+      "mota": "Hoa có nhiều màu, đẹp ngất ngây lòng người,"
+    },
+    {
+      "id": 12,
+      "ten": "Cẩm tú cầu",
+      "url": "camtucau.jpg",
+      "mota": "Đẹp trang nhã, nhẹ nhàng. Sống lâu năm"
+    }
+  ],
+  "choi": [
+    {
+      "id": 1,
+      "hoten": "huy",
+      "diem": -10,
+      "thoidiem": "4/7/2023, 11:46:11 PM"
+    },
+    {
+      "id": 2,
+      "hoten": "huy 2",
+      "diem": -10,
+      "thoidiem": "4/8/2023, 3:38:00 PM"
+    }
+  ]
+}

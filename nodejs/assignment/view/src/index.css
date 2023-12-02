@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e14eca;
+    --background-color: #1E1E2D;
+    --child-background-color: #27293D;
+}
+
+@layer components {
+    .sidebar-active {
+        @apply border-[color:var(--primary-color)] text-[color:var(--primary-color)];
+    }
+
+    .sidebar-inactive {
+        @apply border-gray-300 text-gray-300 hover:border-gray-100 hover:text-gray-100;
+    }
+}
+
+.text-danger {
+    color: #fd5d93;
+}
+
+.text-success {
+    color: #00f2c3;
+}
+
+.btn-primary {
+    border: none;
+    overflow: hidden;
+    border-radius: .4285rem;
+    background: #e14eca;
+    background-image: linear-gradient(to bottom left,#e14eca,#ba54f5,#e14eca);
+    background-size: 210% 210%;
+    background-position: 100% 0;
+    background-color: #e14eca;
+    transition: all .15s ease;
+    box-shadow: none;
+    color: #fff;
+}
+
+.form-input {
+    font-weight: 400;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #cad1d7;
+    outline: none;
+    box-shadow: none;
+    border-color: #2b3553;
+    border-radius: .4285rem;
+    transition: color .3s ease-in-out,border-color .3s ease-in-out,background-color .3s ease-in-out;
+}
+
+.form-input:focus {
+    border: 1px solid #e14eca;
+}

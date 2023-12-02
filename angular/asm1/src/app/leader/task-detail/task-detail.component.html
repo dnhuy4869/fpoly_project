@@ -1,0 +1,22 @@
+<div class="mt-3 px-2">
+    <h5 class="bg-success text-white p-2">CHI TIẾT TASK</h5>
+    <p class="mb-3">
+        <b class="">Tên task</b>: {{projectData.detailTask.tenTask}}
+    </p>
+    <p class="mb-3">
+        <b class="">Mô tả</b>: {{projectData.detailTask.moTa}}
+    </p>
+    <p class="mb-3">
+        <b class="">Độ ưu tiên</b>: {{getPriority(projectData.detailTask.priority)}}
+    </p>
+    <p class="mb-3">
+        <b class="">Trạng thái</b>: {{getStatus(projectData.detailTask.status)}}
+    </p>
+    <p class="mb-3">
+        <b class="">Nhân viên</b>: {{getNhanVien(projectData.detailTask.nhanvienID)}}
+    </p>
+    <p class="mb-3">
+        <b class="">Dự án</b>: {{getDuAn(projectData.detailTask.duAnID)}}
+    </p>
+</div>
+

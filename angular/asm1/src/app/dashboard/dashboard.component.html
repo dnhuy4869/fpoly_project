@@ -1,0 +1,16 @@
+<div class="mt-3 px-2">
+    <h5 class="bg-success text-white p-2">BẢNG ĐIỀU KHIỂN</h5>
+    <div class="alert alert-info show mb-3">
+        <strong>Số lượng nhân viên</strong>: {{projectData.listNhanVien.length}}
+    </div>
+    <div class="alert alert-info show mb-3">
+        <strong>Số lượng dự án</strong>: {{projectData.listDuAn.length}}
+    </div>
+    <div class="alert alert-info show mb-3">
+        <strong>Số lượng task</strong>: {{projectData.listTask.length}}
+    </div>
+    <div class="alert alert-info show mb-3">
+        <strong>Tổng chi phí</strong>: {{calcTotalCost() | currency:'VND':'symbol-narrow':'1.0-0'}}
+    </div>
+</div>
+

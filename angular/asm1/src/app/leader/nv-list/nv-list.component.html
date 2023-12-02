@@ -1,0 +1,28 @@
+<div class="px-2">
+    <form class="d-flex mt-3">
+        <input class="form-control me-2" type="search" placeholder="Từ khóa" aria-label="Search"
+            name="tk" [(ngModel)]="tukhoa" (keyup)="search()">
+        <button class="btn btn-success" type="submit">Tìm</button>
+    </form>
+    <table class="table table-bordered border border-primary mt-3">
+        <caption align="top" class="bg-success text-white p-2">DANH SÁCH NHÂN VIÊN</caption>
+        <tr>
+            <th> ID </th>
+            <th> Họ tên</th>
+            <th> Ngày sinh </th>
+            <th> Phái</th>
+            <th> Khu vực</th>
+        </tr>
+        <tr *ngFor="let nv of projectData._listNhanVien">
+            <td> {{nv.id}} </td>
+            <td> {{nv.ho}} {{nv.ten}}</td>
+            <td> {{datePipe.transform(nv.ngaysinh, 'dd/MM/yyyy')}}</td>
+            <td> {{nv.phai ? "Nam" : "Nữ"}}</td>
+            <td> {{nv.khuvuc}}</td>
+            <td>
+                <button class="text-info" (click)="editNhanVien(nv)">Sửa</button>
+                <button class="text-danger" (click)="deleteNhanVien(nv.id)">Xóa</button>
+            </td>
+        </tr>
+    </table>
+</div>

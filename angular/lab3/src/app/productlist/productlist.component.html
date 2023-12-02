@@ -1,0 +1,29 @@
+<div class="ms-3">
+    <h1 class="my-3">Danh sách sản phẩm</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Tên SP</th>
+            <th>Code</th>
+            <th>Ngày</th>
+            <th>Giá </th>
+            <th>Đánh giá</th>
+        </tr>
+        <tr *ngFor="let p of products">
+            <td (click)="xemChiTiet(p.id)">{{p.tensp}}</td>
+            <td>{{p.code}}</td>
+            <td>{{p.ngay}}</td>
+            <td>{{p.giasp}}</td>
+            <td>
+                <div style="overflow: hidden" [style.width.px]="p.starRate*90/5" title="rating">
+                    <div style="width: 90px">
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

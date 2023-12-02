@@ -1,0 +1,51 @@
+<div class="card">
+    <div class="card-header">
+        DANH SÁCH SẢN PHẨM
+        <!-- <label for="" class="float-end">
+            <input type="text" name="tk" [(ngModel)]="tukhoa" (keyup)="locSP()">
+            <em class="text-danger">{{ tukhoa }}</em>
+        </label> -->
+        <div class="float-end flex align-items-center">
+            <input type="checkbox" id="si" name="si" [(ngModel)]="showImages">
+            <label for="si">Hiện hình ảnh</label>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Hình</th>
+                    <th>Tên SP</th>
+                    <th>Mã SP</th>
+                    <th>Ngày</th>
+                    <th>Giá (VND) </th>
+                    <th>Đánh giá</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of productService.products"> <!-- dòng dữ liệu-->
+                    <td align="center">
+                        <img src="{{showImages ? p.urlImage : null}}" height="50" />
+                    </td>
+                    <td>{{ p.tensp | uppercase }}</td>
+                    <td>{{ p.code }}</td>
+                    <td>{{ p.ngay | date:'dd/MM/Y' }}</td>
+                    <td>{{ p.giasp * 23000 | currency:'VND':'symbol-narrow':'1.0-0' }}</td>
+                    <td>
+                        <div style="overflow: hidden" [style.width.px]="p.starRate*90/5" title="rating">
+                            <div style="width: 90px">
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="card-footer">Số lượng sản phẩm: <b>{{ productService.products.length }}</b> </div>
+</div>

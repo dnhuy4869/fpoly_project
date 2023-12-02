@@ -1,0 +1,26 @@
+<div class="px-2">
+    <input class="form-control me-2" type="search" placeholder="Từ khóa" aria-label="Search" name="tk"
+        [(ngModel)]="tukhoa" (keyup)="search()">
+    <h4 class="bg-success text-white mt-3 p-2">DANH SÁCH TASK</h4>
+    <div *ngFor="let task of projectData._listTask" class="mb-3">
+        <div>
+            <b>{{task.tenTask}} </b><br>
+            {{task.moTa}}
+        </div>
+        <div class="mb-3 border-bottom row">
+            <div class="col-6">
+                Độ ưu tiên: {{getPriority(task.priority)}}<br>
+                Trạng thái: {{getStatus(task.status)}}
+            </div>
+            <div class="col-6">
+                Nhân viên: {{getNhanVien(task.nhanvienID)}}<br>
+                Dự án: {{getDuAn(task.duAnID)}}
+            </div>
+            <div class="mt-2 d-flex gap-2">
+                <button class="btn btn-info" (click)="editTask(task)">Sửa</button>
+                <button class="btn btn-danger" (click)="deleteTask(task.id)">Xóa</button>
+                <button class="btn btn-success" (click)="viewDetailTask(task)">Chi tiết</button>
+            </div>
+        </div>
+    </div>
+</div>

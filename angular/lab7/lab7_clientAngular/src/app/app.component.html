@@ -1,0 +1,25 @@
+<div class="container">
+  <nav>
+  <nav class="navbar navbar-expand navbar-light bg-danger">
+  <ul class="navbar-nav">
+  <li class="nav-item"><a class="nav-link text-white" routerLink="" href="#">Trang chủ</a> </li>
+  <li class="nav-item"><a class="nav-link text-white" routerLink="download" href="#">Download</a> </li>
+  <li class="nav-item"><a class="nav-link text-white" routerLink="dangky" href="#">Đăng ký</a> </li>
+  <li class="nav-item"><a class="nav-link text-white" routerLink="dangnhap" href="#">Đăng nhập</a> </li>
+  <li class="nav-item"><a class="nav-link text-white" routerLink="doipass" href="#">Đổi pass</a> </li>
+  </ul>
+  </nav>
+  </nav>
+  <main class="d-flex" style="min-height: 400px;">
+    <article class="col-md-9 bg-light">
+        <router-outlet></router-outlet>
+    </article>
+    <aside class="col-md-3 bg-secondary">
+      <a class="px-3" href="" (click)="thoat()" style="text-decoration: none; color: white;">Thoát</a>
+      <p class="text-white px-3">Tình trạng đăng nhập: {{ daDangNhap()}}</p>
+      <p *ngIf="daDangNhap()">
+        <a style="text-decoration: none; color: white;" href="#" class="nav-link" routerLink="doipass">Đổi pass</a>
+      </p>
+      </aside>
+  </main>
+</div>

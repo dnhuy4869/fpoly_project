@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    grid-template-columns: 33% 33% auto;
+    gap: 8px;
+}
+
+.card {
+   border: solid 1px aqua;
+   text-align: center;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-desc {
+    padding: 8px;
+}
+
+.card-desc img {
+    height: 300px;
+    width: 100%;
+}

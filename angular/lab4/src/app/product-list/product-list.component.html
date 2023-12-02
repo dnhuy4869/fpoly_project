@@ -1,0 +1,11 @@
+<div class="mb-3" *ngFor="let sp of listProduct">
+    <div class="d-flex gap-4">
+        <img src="{{sp.urlImage}}" height="100" width="100" />
+        <div class="">
+            <h4><a href="#" [routerLink]="['/product', sp.id]">{{sp.name}}</a></h4>
+            <p>{{sp.desc}}</p>
+            <p>{{sp.price}}</p>
+        </div>
+    </div>
+    <hr>
+</div>

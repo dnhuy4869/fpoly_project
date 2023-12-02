@@ -1,0 +1,11 @@
+{   "compilerOptions": {
+    "outDir" : "src/js",
+    "module": "es6",
+    "allowJs": true,
+    "target" : "ES2022",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,    
+    "removeComments" : true,
+    "strictPropertyInitialization": false,
+},
+}

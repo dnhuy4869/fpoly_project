@@ -1,0 +1,27 @@
+<div class="px-2">
+    <form class="d-flex mt-3">
+        <input class="form-control me-2" type="search" placeholder="Từ khóa" aria-label="Search"
+        name="tk" [(ngModel)]="tukhoa" (keyup)="search()">
+        <button class="btn btn-success" type="submit">Tìm</button>
+    </form>
+    <table class="table table-bordered border border-primary mt-3">
+        <caption align="top" class="bg-success p-2 text-white">DANH SÁCH DỰ ÁN</caption>
+        <tr>
+            <th> ID </th>
+            <th> Tên dự án</th>
+            <th> Ngày start</th>
+            <th> Tiền</th>
+            <th> Thao tác</th>
+        </tr>
+        <tr *ngFor="let da of projectData._listDuAn">
+            <td> {{da.id}} </td>
+            <td> {{da.tenDuAn}}</td>
+            <td> {{datePipe.transform(da.ngayStart, 'dd/MM/yyyy')}}</td>
+            <td> {{da.tien | currency:'VND':'symbol-narrow':'1.0-0'}}</td>
+            <td>
+                <button class="text-info" (click)="editDuAn(da)">Sửa</button>
+                <button class="text-danger" (click)="deleteDuAn(da.id)">Xóa</button>
+            </td>
+        </tr>
+    </table>
+</div>

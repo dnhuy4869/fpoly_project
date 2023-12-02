@@ -1,0 +1,8 @@
+<form class="col-8 m-auto border border-primary p-2">
+    <p>Tên SP<input type="text" class="form-control" name="name" [(ngModel)]="sp.name"></p>
+    <p>Giá<input type="text" class="form-control" name="price" [(ngModel)]="sp.price"></p>
+    <p>Code <input type="text" class="form-control" name="code" [(ngModel)]="sp.code"></p>
+    <p>Ngày<input type="date" class="form-control" name="date" [(ngModel)]="sp.date"></p>
+    <p>Mô tả<textarea class="form-control" name="desc" [(ngModel)]="sp.desc"></textarea></p>
+    <p><button class="btn btn-warning py-2 px-5" (click)="suaSP()">Sửa</button></p>
+</form>

@@ -1,0 +1,46 @@
+<form class="mt-3 px-2" (submit)="addNV($event)" #frm1="ngForm">
+    <h5 class="bg-success text-white p-2">THÊM NHÂN VIÊN</h5>
+    <div class="mb-3">
+        Họ
+        <input class="form-control" name="ho" [(ngModel)]="ho" required #errho="ngModel">
+        <p *ngIf="errho.invalid && (errho.dirty || errho.touched)" class="text-danger">
+            <span *ngIf="errho.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Tên
+        <input class="form-control" name="ten" [(ngModel)]="ten" required #errname="ngModel">
+        <p *ngIf="errname.invalid && (errname.dirty || errname.touched)" class="text-danger">
+            <span *ngIf="errname.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Ngày sinh
+        <input class="form-control" type="date" name="ngaysinh" [(ngModel)]="ngaysinh" required #errns="ngModel">
+        <p *ngIf="errns.invalid && (errns.dirty || errns.touched)" class="text-danger">
+            <span *ngIf="errns.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Phái
+        <select class="form-control" name="phai" [(ngModel)]="phai" required #errphai="ngModel">
+            <option value="false">Nữ</option>
+            <option value="true">Nam</option>
+        </select>
+        <p *ngIf="errphai.invalid && (errphai.dirty || errphai.touched)" class="text-danger">
+            <span *ngIf="errphai.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <div class="mb-3">
+        Khu vực
+        <select class="form-control" name="khuvuc" [(ngModel)]="khuvuc" required #errkv="ngModel">
+            <option>Bắc</option>
+            <option>Trung</option>
+            <option>Nam</option>
+        </select>
+        <p *ngIf="errkv.invalid && (errkv.dirty || errkv.touched)" class="text-danger">
+            <span *ngIf="errkv.errors?.['required']">This field is required</span>
+        </p>
+    </div>
+    <p><button type="submit" class="btn btn-primary p-2">Thêm nhân viên</button></p>
+</form>

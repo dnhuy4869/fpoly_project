@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="bg-warning text-black mt-3 p-2">TIN TỨC HAY</div>
+    <div *ngFor="let news of newsList">
+        <div class="border border-primary my-3 p-3">
+            <b class="mb-2"> {{news.TieuDe | uppercase}} </b>
+            <div>{{news.TomTat}}</div>
+            <div class="mt-2">
+                <p class="mb-1"><b>Số lần xem:</b> {{news.Xem}}</p>
+                <p class="mb-0"><b>Ngày:</b> {{getNgay(news)}}</p>
+            </div>
+        </div>
+    </div>
+</div>

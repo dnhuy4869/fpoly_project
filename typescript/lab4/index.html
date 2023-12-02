@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Họ tên sinh viên</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <body>
+        <div id="app"></div>
+        <div id="calc">
+            <form name="frm" class="col-5 m-auto mt-5 border border-primary p-2">
+                <div class="mb-3">
+                    Số A
+                    <input class="form-control" name="a" type="number" placeholder="Nhập hệ số a">
+                </div>
+                <div class="mb-3">
+                    Số B
+                    <input class="form-control" name="b" type="number" placeholder="Nhập hệ số b">
+                </div>
+                <p>
+                    Chọn phép toán:
+                    <input type="radio" name="pheptoan" value="1" checked /> Cộng
+                    <input type="radio" name="pheptoan" value="2" /> Trừ &nbsp
+                    <input type="radio" name="pheptoan" value="3" /> Nhân &nbsp
+                    <input type="radio" name="pheptoan" value="4" /> Chia
+                </p>
+                <div class="mb-3">
+                    <button name="btn" class="btn btn-primary p-2" type="button">Tính</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
